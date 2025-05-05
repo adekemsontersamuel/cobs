@@ -21,7 +21,7 @@ async function sendMessage() {
     responseContainer.appendChild(loadingResponseBox);
   
     try {
-      const response = await fetch("/api/send-message", {
+      const response = await fetch("https://cobeks-intelligence.vercel.app/send-message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message, model })
