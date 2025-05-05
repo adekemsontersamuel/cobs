@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobek AI - AI for Secondary School Students</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/chat_styles.css">
+    <!-- <script src="chat.ts"></script> -->
+    <script src="/script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Cobek AI</h1>
+        <p>The Perfect AI Model for Secondary School Students</p>
+        <img src="cobek_AI.jpg">
+       <!--Sign Up-->
+            <button><a href="sign_up.html">Try Now</a></button>
+    </header>
+
+    <!-- AI Models Section -->
+    <section id="ai-models">
+        <h2>Our AI Models</h2>
+        <div class="ai-grid">
+            <div class="ai-card">
+                <h3>ChatGpt</h3>
+                <p>The core AI designed for general knowledge and homework help.</p>
+            </div>
+            <div class="ai-card">
+                <h3>Meta AI (llama)</h3>
+                <p>Specialized in solving math problems and explaining concepts.</p>
+            </div>
+            <div class="ai-card">
+                <h3>Co-Pilot</h3>
+                <p>Helps with science experiments, concepts, and projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prompt Section -->
+    <section id="prompt">
+        <h2>Ask a Question</h2>
+        <div class="chatbot-container">
+            <div class="chat-header">
+              <h2>AI Model</h2>
+            </div>
+            
+            <div class="chat-body" id="chat-body">
+              <p><strong>Hello!:</strong> How can I assist you today?</p>
+            </div>
+            <div class="chat-footer">
+              <!-- <input type="text" id="user-input" placeholder="Type your message..."> -->
+
+              <!-- <div class="model-selector">
+                <select id="model-select">
+                  <option value="ChatGpt">ChatGpt</option>
+                  <option value="Meta AI">Meta AI</option>
+                  <option value="Co-Pilot">Co-Pilot</option>
+                </select>
+              </div>
+              <button onclick="sendMessage()">Send</button> -->
+
+             
+<input type="text" id="user-message" placeholder="Type your message..." />
+
+<select id="model">
+  <option value="chatgpt">ChatGPT</option>
+  <option value="meta_ai">Meta AI</option>
+  <!-- <option value="copilot">Co-Pilot</option> -->
+  <option value="deepseek">Deepseek</option>
+  <option value="gemini-2.0-flash">Gemini</option>
+</select>
+
+<button onclick="sendMessage()">Send</button>
+<p>
+<div id="response-container" style="margin-top: 20px;"></div>
+</p>
+
+
+<!-- checking -->
+<!-- <select id="model">
+    <option value="chatgpt">ChatGPT</option>
+    <option value="meta_ai">Meta AI</option>
+    <option value="copilot">Co-Pilot</option>
+</select>
+<input type="text" id="user-message" placeholder="Type your message..." />
+<button onclick="sendMessage()">Send</button>
+<div id="response"></div> -->
+
+
+            </div>
+          </div>
+
+         
+        
+    <!-- Footer -->
+    <!-- <footer>
+        <p>&copy; 2025 Cobek AI. All rights reserved.</p>
+    </footer> -->
+
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+*.txt
+*.md
+*.log
+*.lock
+*.tmp
+
+
+# Ignore entire directory
+node_modules/
+dist/
+build/
+
+# Ignore directory anywhere in project
+**/temp/
+
