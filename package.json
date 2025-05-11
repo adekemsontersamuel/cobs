@@ -14,7 +14,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node api/index.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

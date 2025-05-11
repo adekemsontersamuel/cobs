@@ -128,7 +128,6 @@ app.post('/send-message', async (req, res) => {
     }
 });
 
-// app.listen(5000, () => {
-//     console.log("✅ Server running on http://localhost:5000");
-// });
-module.exports = app; // Export the app for testing purposes
+app.listen(5000, () => {
+    console.log("✅ Server running on http://localhost:5000");
+});
