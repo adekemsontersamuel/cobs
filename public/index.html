@@ -1,104 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cobek AI - AI for Secondary School Students</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/chat_styles.css">
-    <!-- <script src="chat.ts"></script> -->
-    <script src="/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cobek AI - AI for Secondary School Students</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/chat_styles.css">
+  <script src="/script.js"></script>
+  <style>
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode header,
+    body.dark-mode section {
+      background-color: #1e1e1e;
+    }
+
+    body.dark-mode input,
+    body.dark-mode select,
+    body.dark-mode button {
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+      border: 1px solid #444;
+    }
+
+    #darkModeToggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Cobek AI</h1>
-        <p>The Perfect AI Model for Secondary School Students</p>
-        <img src="cobek_AI.jpg">
-       <!--Sign Up-->
-            <button><a href="sign_up.html">Try Now</a></button>
-    </header>
+  <!-- 🌙 Dark Mode Toggle -->
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
-    <!-- AI Models Section -->
-    <section id="ai-models">
-        <h2>Our AI Models</h2>
-        <div class="ai-grid">
-            <div class="ai-card">
-                <h3>ChatGpt</h3>
-                <p>The core AI designed for general knowledge and homework help.</p>
-            </div>
-            <div class="ai-card">
-                <h3>Meta AI (llama)</h3>
-                <p>Specialized in solving math problems and explaining concepts.</p>
-            </div>
-            <div class="ai-card">
-                <h3>Co-Pilot</h3>
-                <p>Helps with science experiments, concepts, and projects.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Header -->
+  <header>
+    <h1>Cobek AI</h1>
+    <p>The Perfect AI Model for Secondary School Students</p>
+    <img src="cobek_AI.jpg">
+    <button><a href="sign_up.html">Try Now</a></button>
+  </header>
 
-    <!-- Prompt Section -->
-    <section id="prompt">
-        <h2>Ask a Question</h2>
-        <div class="chatbot-container">
-            <div class="chat-header">
-              <h2>AI Model</h2>
-            </div>
-            
-            <div class="chat-body" id="chat-body">
-              <p><strong>Hello!:</strong> How can I assist you today?</p>
-            </div>
-            <div class="chat-footer">
-              <!-- <input type="text" id="user-input" placeholder="Type your message..."> -->
+  <!-- AI Models Section -->
+  <section id="ai-models">
+    <h2>Our AI Models</h2>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3>ChatGpt</h3>
+        <p>The core AI designed for general knowledge and homework help.</p>
+      </div>
+      <div class="ai-card">
+        <h3>Meta AI (llama)</h3>
+        <p>Specialized in solving math problems and explaining concepts.</p>
+      </div>
+      <div class="ai-card">
+        <h3>Co-Pilot</h3>
+        <p>Helps with science experiments, concepts, and projects.</p>
+      </div>
+    </div>
+  </section>
 
-              <!-- <div class="model-selector">
-                <select id="model-select">
-                  <option value="ChatGpt">ChatGpt</option>
-                  <option value="Meta AI">Meta AI</option>
-                  <option value="Co-Pilot">Co-Pilot</option>
-                </select>
-              </div>
-              <button onclick="sendMessage()">Send</button> -->
+  <!-- Prompt Section -->
+  <section id="prompt">
+    <h2>Ask a Question</h2>
+    <div class="chatbot-container">
+      <div class="chat-header">
+        <h2>AI Model</h2>
+      </div>
+      <div class="chat-body" id="chat-body">
+        <p><strong>Hello!:</strong> How can I assist you today?</p>
+      </div>
+      <div class="chat-footer">
+        <input type="text" id="user-message" placeholder="Type your message..." />
+        <select id="model">
+          <option value="gemini-2.0-flash">ChatGPT</option>
+          <option value="gemini-2.0-flash">Deepseek</option>
+          <option value="gemini-2.0-flash">Gemini</option>
+        </select>
+        <button onclick="sendMessage()">Send</button>
+        <p><div id="response-container" style="margin-top: 20px;"></div></p>
+      </div>
+    </div>
+  </section>
 
-             
-<input type="text" id="user-message" placeholder="Type your message..." />
-
-<select id="model">
-  <option value="gemini-2.0-flash">ChatGPT</option>
-<!--   <option value="meta_ai">Meta AI</option> -->
-  <!-- <option value="copilot">Co-Pilot</option> -->
-  <option value="gemini-2.0-flash">Deepseek</option>
-  <option value="gemini-2.0-flash">Gemini</option>
-</select>
-
-<button onclick="sendMessage()">Send</button>
-<p>
-<div id="response-container" style="margin-top: 20px;"></div>
-</p>
-
-
-<!-- checking -->
-<!-- <select id="model">
-    <option value="chatgpt">ChatGPT</option>
-    <option value="meta_ai">Meta AI</option>
-    <option value="copilot">Co-Pilot</option>
-</select>
-<input type="text" id="user-message" placeholder="Type your message..." />
-<button onclick="sendMessage()">Send</button>
-<div id="response"></div> -->
-
-
-            </div>
-          </div>
-
-         
-        
-    <!-- Footer -->
-    <!-- <footer>
-        <p>&copy; 2025 Cobek AI. All rights reserved.</p>
-    </footer> -->
-
-    
+  <!-- Dark Mode Script -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const button = document.getElementById('darkModeToggle');
+      button.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+  </script>
 </body>
 </html>
