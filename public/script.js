@@ -21,10 +21,10 @@ async function sendMessage() {
   responseContainer.appendChild(loadingResponseBox);
 
  // Add modern font style and sizing here
-    newResponseBox.style.fontFamily = '"Segoe UI", Roboto, Helvetica, Arial, sans-serif';
-    newResponseBox.style.fontSize = "1.05rem";
-    newResponseBox.style.lineHeight = "1.6";
-    newResponseBox.style.color = "#333";
+    // newResponseBox.style.fontFamily = '"Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    // newResponseBox.style.fontSize = "1.05rem";
+    // newResponseBox.style.lineHeight = "1.6";
+    // newResponseBox.style.color = "#333";
   
   try {
       const response = await fetch("https://cobek-intelligence.onrender.com/send-message", {
